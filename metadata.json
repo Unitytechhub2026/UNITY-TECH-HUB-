@@ -1,0 +1,6 @@
+{
+  "name": "UNITY TECH HUB",
+  "description": "Professional CCTV Security Systems, CCTV Installation & Repairs, Computer & Laptop Repairs, Networking, and IT Solutions in Sri Lanka.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #030712;
+    color: #f8fafc;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Glassmorphism and Glow Utilities */
+.glass-panel {
+  background: rgba(11, 17, 32, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.14);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(34, 211, 238, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.25);
+  transform: translateY(-2px);
+}
+
+.glass-panel-active {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(34, 211, 238, 0.5);
+  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.3);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 35px -5px rgba(6, 182, 212, 0.35);
+}
+
+.glow-blue {
+  box-shadow: 0 0 35px -5px rgba(37, 99, 235, 0.35);
+}
+
+.tech-grid-pattern {
+  background-image: radial-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.tech-radial-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.15) 0%, rgba(3, 7, 18, 0) 70%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0ea5e9;
+}
+
+/* Print Styles for Quotations & Invoices */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 10mm 10mm 10mm;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide all non-printable elements */
+  nav,
+  header,
+  footer,
+  aside,
+  .no-print,
+  #floating-action-buttons,
+  #admin-sidebar,
+  #admin-topbar,
+  .print-hide {
+    display: none !important;
+  }
+
+  /* Ensure print document container is full width and high contrast */
+  .printable-document {
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  .printable-document * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-page-break {
+    page-break-after: always;
+  }
+}
+
+
